@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">BashApplication</string>
+
+
+    <string name="main_homepage">主页</string>
+    <string name="main_terminal">终端</string>
+    <string name="main_function">功能</string>
+    <string name="main_mine">我的</string>
+</resources>
