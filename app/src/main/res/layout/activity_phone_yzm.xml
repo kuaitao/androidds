@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".login.PhoneYzmActivity">
+
+    <include layout="@layout/share_title" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="请输入验证码"
+            android:textSize="16sp" />
+
+        <com.jyn.vcview.VerificationCodeView
+            android:id="@+id/tv_yzm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:vcv_et_cursor="@drawable/et_cursor"
+            app:vcv_et_cursor_visible="false"
+            app:vcv_et_inputType="number"
+            app:vcv_et_number="6"
+            app:vcv_et_spacing="6dp"
+            app:vcv_et_text_color="#FFC107"
+            app:vcv_et_text_size="6sp" />
+
+
+        <TextView
+            android:id="@+id/tv_post_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:text="获取验证码"
+            android:textSize="@dimen/sp_14" />
+
+
+        <TextView
+            android:id="@+id/tv_sure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="20dp"
+            android:paddingBottom="10dp"
+            android:text="确定"
+            android:textSize="@dimen/sp_14" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:gravity="bottom|center_horizontal"
+        android:paddingLeft="5dp"
+        android:paddingTop="5dp"
+        android:paddingRight="5dp"
+        android:paddingBottom="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="登录即表示同意"
+            android:textSize="10sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="服务协议"
+            android:textSize="10sp" />
+    </LinearLayout>
+</LinearLayout>

@@ -45,8 +45,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".login.LoginActivity" />
-        <activity android:name=".main.MainActivity">
+        <activity android:name=".login.SelectCountryActivity"></activity>
+        <activity android:name=".login.PhoneYzmActivity"></activity>
+        <activity android:name=".login.PhoneLoginActivity">
+
+        </activity>
+        <activity android:name=".main.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

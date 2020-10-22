@@ -13,6 +13,7 @@ import androidx.lifecycle.Lifecycle;
 
 import com.bashapplication.utils.InputMethodUtils;
 import com.bashapplication.view.NoDoubleClickListener;
+import com.bashapplication.view.To;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -174,6 +175,12 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment imp
 
     @Override
     public void hideLoading() {
+    }
+    /**
+     * 弹出一个3s显示的toast框
+     */
+    public void toastShort(String msg) {
+        To.showCustomToast(msg);
     }
 
 }

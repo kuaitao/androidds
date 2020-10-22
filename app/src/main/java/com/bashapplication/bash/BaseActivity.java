@@ -22,6 +22,7 @@ import com.bashapplication.utils.GlideUtils;
 import com.bashapplication.utils.InputMethodUtils;
 import com.bashapplication.utils.LeakFix;
 import com.bashapplication.view.NoDoubleClickListener;
+import com.bashapplication.view.To;
 import com.blankj.utilcode.util.ActivityUtils;
 import com.blankj.utilcode.util.LogUtils;
 import com.gyf.barlibrary.ImmersionBar;
@@ -232,6 +233,12 @@ public abstract class BaseActivity<T extends BasePresenter>  extends AppCompatAc
     public void hideLoading() {
     }
 
+    /**
+     * 弹出一个3s显示的toast框
+     */
+    public void toastShort(String msg) {
+        To.showCustomToast(msg);
+    }
 
 
 }

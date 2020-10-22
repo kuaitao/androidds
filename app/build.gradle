@@ -135,5 +135,10 @@ dependencies {
     //升级
     implementation 'com.allenliu.versionchecklib:library:2.2.0'
 
+    //底部
     implementation 'com.ashokvarma.android:bottom-navigation-bar:2.2.0'
+
+    //验证码方框
+    implementation 'com.jyn.verificationcodeview:verificationcodeview:1.0.1'
+    implementation 'com.github.promeg:tinypinyin:2.0.3'
 }

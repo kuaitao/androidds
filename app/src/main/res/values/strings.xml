@@ -6,4 +6,7 @@
     <string name="main_terminal">终端</string>
     <string name="main_function">功能</string>
     <string name="main_mine">我的</string>
+    <string name="phone_login">手机登录</string>
+    <string name="login_phone_inert_hint">请输入手机号</string>
+    <string name="register_post_code">获取验证码</string>
 </resources>
