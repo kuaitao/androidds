@@ -133,3 +133,7 @@
 -keep class com.zhouyou.http.cache.model.** {*;}
 -keep class com.zhouyou.http.cache.stategy.**{*;}
 
+-keep class com.google.android.material.** {*;}
+-dontwarn com.google.android.material.**
+-dontnote com.google.android.material.**
+

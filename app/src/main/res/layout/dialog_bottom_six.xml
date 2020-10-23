@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:alpha="80"
+        android:background="@drawable/shape_white_cor20"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_man"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal"
+            android:textColor="@color/color68b9ff"
+            android:text="男"
+            android:textSize="18sp"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="#D2D2D2"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_woman"
+            android:gravity="center_horizontal"
+            android:textColor="@color/color68b9ff"
+            android:text="女"
+            android:textSize="18sp"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="#D2D2D2"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_secrecy"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="20dp"
+            android:textColor="@color/color68b9ff"
+            android:text="保密"
+            android:textSize="18sp"/>
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_select_cancel"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="20dp"
+        android:padding="15dp"
+        android:paddingBottom="15dp"
+        android:background="@drawable/shape_white_cor20"
+        android:textColor="@color/color68b9ff"
+        android:text="取消"
+        android:textSize="18sp"/>
+
+</LinearLayout>

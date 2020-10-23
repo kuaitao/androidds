@@ -17,6 +17,7 @@ import com.zhouyou.http.EasyHttp;
 import com.zhouyou.http.callback.CallBack;
 import com.zhouyou.http.callback.ProgressDialogCallBack;
 import com.zhouyou.http.exception.ApiException;
+import com.zhouyou.http.model.HttpHeaders;
 import com.zhouyou.http.model.HttpParams;
 
 import org.greenrobot.eventbus.EventBus;
@@ -168,6 +169,8 @@ public class API<onCallBackDialog> {
     }
 
     protected Disposable get(String url, HttpParams params, SimpleCallBack callBack) {
+        EasyHttp.getInstance().addCommonHeaders(new HttpHeaders("X-Client-Token","p18001:android"))
+        .addCommonHeaders(new HttpHeaders("session","p18001:android:ccda426f4c304bf8ae68d45833754d2d"));
         if (ObjectUtils.isEmpty(params)) {
             return EasyHttp.get(url).timeStamp(true).execute(onCallBack(callBack));
         } else {
@@ -270,11 +273,11 @@ public class API<onCallBackDialog> {
                 }
                 try {
                     JSONObject jsonObject = new JSONObject(s);
-                    String state = jsonObject.isNull("state") ? null : jsonObject.getString("state");
+                    int state = jsonObject.isNull("state") ? null : jsonObject.getInt("state");
                     String msg = jsonObject.isNull("msg") ? null : jsonObject.getString("msg");
-                    if (state.equals("1")) {
+                    if (state==1) {
                         callBack.onSuccess(new Gson().fromJson(s, callBack.getType()));
-                    }else if(state.equals("100")){
+                    }else if(state==100){
 
 
 

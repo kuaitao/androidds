@@ -1,6 +1,7 @@
 package com.bashapplication.network.https;
 
 
+import com.bashapplication.network.api.HomeApi;
 import com.bashapplication.network.api.LoginApi;
 
 /**
@@ -27,18 +28,18 @@ public class HttpUtils {
     }
 
     public LoginApi loginApi;//登录
-
+    public HomeApi homeApi;
 
     private HttpUtils() {
         loginApi = new LoginApi();
-
+        homeApi = new HomeApi();
     }
 
     /**
      * 环境
      */
 
-    public  final String BASE_URL ="precision/";
+    public  final String BASE_URL ="https://api.bjpygh.com/api/";
 
 
 }

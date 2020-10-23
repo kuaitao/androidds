@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingTop="15dp"
+    android:paddingBottom="15dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="2dp">
+    <!--为了做cardview左边无圆角把cardview向左移动了14dp(圆角大小)，所以此处让左边空出14+2（原始padding）以免左边展示不全-->
+
+
+    <TextView
+        android:id="@+id/tv_lable_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="2dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text=""
+        android:textColor="@color/color77808b"
+        android:textSize="14sp" />
+
+</RelativeLayout>

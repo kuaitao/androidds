@@ -57,4 +57,15 @@
         <item name="android:windowContentOverlay">@null</item>
 
     </style>
+    <style name="TabLayoutTextStyle">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/color222427</item>
+
+    </style>
+    <style name="TabLayoutDefaultStyle">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/colorc3c8d4</item>
+        <item name="android:textStyle">normal</item>
+    </style>
 </resources>

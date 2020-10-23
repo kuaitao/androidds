@@ -1,10 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="首页"/>
+
+    <com.flyco.tablayout.SlidingTabLayout
+        android:id="@+id/tl_entrance_tab"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/white"
+        app:tl_indicator_color="@color/colorf54a76"
+        app:tl_textUnselectColor="@color/color9ca4b7"
+        app:tl_divider_color="@color/colorf54a76"
+        app:tl_textSelectColor="@color/color222427"
+        app:tl_textsize="@dimen/sp_14"
+        app:tl_textBold="SELECT"
+        app:tl_indicator_corner_radius="3dp"
+        app:tl_indicator_height="5dp"
+        app:tl_indicator_width="23dp"/>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vp_entrance"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp" />
+
+<!--    <include layout="@layout/view_error_layout" />-->
 </LinearLayout>

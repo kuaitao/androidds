@@ -5,19 +5,19 @@ import android.os.Bundle;
 import com.bashapplication.R;
 import com.bashapplication.bash.BaseFragment;
 
-public class TerminalFragment extends BaseFragment {
+public class FollowFragment extends BaseFragment {
 
-    public static TerminalFragment newInstance(String param1) {
-        TerminalFragment fragment = new TerminalFragment();
+
+    public static FollowFragment newInstance(String param1) {
+        FollowFragment fragment = new FollowFragment();
         Bundle args = new Bundle();
         args.putString("agrs1", param1);
         fragment.setArguments(args);
         return fragment;
     }
-
     @Override
     protected int layoutViewId() {
-        return R.layout.terminal_page_layout;
+        return R.layout.follow_frgment_layout;
     }
 
     @Override

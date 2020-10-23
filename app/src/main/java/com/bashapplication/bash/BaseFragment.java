@@ -24,6 +24,7 @@ import me.jessyan.autosize.internal.CustomAdapt;
 
 public abstract class BaseFragment<T extends BasePresenter> extends Fragment implements IBaseView<T>,CustomAdapt{
 
+    public static final String BEAN_KEY = "bean_key";
     protected FragmentActivity activity;
     protected View rootView;
     private Unbinder mUnbinder;
@@ -51,6 +52,26 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment imp
         return null;
     }
 
+
+    /**
+     * 创建fragment的静态方法，方便传递参数
+     *
+     * @param args 传递的参数
+     * @return
+     */
+    public static <T extends Fragment> T newInstance(Class clazz, Bundle args) {
+        T mFragment = null;
+        try {
+            mFragment = (T) clazz.newInstance();
+        } catch (java.lang.InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+        if (args != null)
+            mFragment.setArguments(args);
+        return mFragment;
+    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {

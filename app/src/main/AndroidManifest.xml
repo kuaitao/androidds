@@ -45,17 +45,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".login.SelectCountryActivity"></activity>
-        <activity android:name=".login.PhoneYzmActivity"></activity>
-        <activity android:name=".login.PhoneLoginActivity">
-
-        </activity>
-        <activity android:name=".main.MainActivity" >
+        <activity android:name=".mine.PersonalInfoActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".login.SelectCountryActivity" />
+        <activity android:name=".login.PhoneYzmActivity" />
+        <activity android:name=".login.PhoneLoginActivity"></activity>
+        <activity android:name=".main.MainActivity">
+
         </activity>
 
         <provider

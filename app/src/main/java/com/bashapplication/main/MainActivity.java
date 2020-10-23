@@ -3,11 +3,8 @@ package com.bashapplication.main;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.pm.PackageManager;
-import android.os.Bundle;
 import android.os.Environment;
 import android.view.KeyEvent;
-import android.view.View;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -29,10 +26,11 @@ import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.bashapplication.R;
 import com.bashapplication.bash.BaseActivity;
-import com.bashapplication.main.fragment.FunctionFragment;
+import com.bashapplication.main.fragment.FollowFragment;
 import com.bashapplication.main.fragment.HomePageFragment;
 import com.bashapplication.main.fragment.MineFragment;
-import com.bashapplication.main.fragment.TerminalFragment;
+import com.bashapplication.main.fragment.CategoryFragment;
+import com.bashapplication.main.fragment.PurchaseOrderFragment;
 import com.bashapplication.network.https.HttpUtils;
 import com.bashapplication.view.BaseDialog;
 import com.blankj.utilcode.util.ToastUtils;
@@ -43,7 +41,6 @@ import org.json.JSONObject;
 import java.io.File;
 
 import butterknife.BindView;
-import butterknife.OnClick;
 
 public class MainActivity extends BaseActivity implements BottomNavigationBar.OnTabSelectedListener {
 
@@ -63,16 +60,21 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
 
 
     /**
-     * 终端
+     * 品类
      */
-    private TerminalFragment terminalFragment;
+    private CategoryFragment categoryFragment;
 
 
     /**
-     * 功能
+     * 关注
      */
-    private FunctionFragment functionFragment;
+    private FollowFragment followFragment;
 
+
+    /**
+     * 进货单
+     */
+    private PurchaseOrderFragment purchaseOrderFragment;
 
     /**
      * 我的
@@ -102,8 +104,9 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
                 .setBackgroundResource(R.color.white);
 
         bottomNavigationBar.addItem(new BottomNavigationItem(R.mipmap.tab_home_normal,"首页").setInactiveIconResource(R.mipmap.tab_home_select))
-                .addItem(new BottomNavigationItem(R.mipmap.tab_chat_normal,"发现").setInactiveIconResource(R.mipmap.tab_chat_select))
-                .addItem(new BottomNavigationItem(R.mipmap.tab_news_normal,"消息").setInactiveIconResource(R.mipmap.tab_news_select))
+                .addItem(new BottomNavigationItem(R.mipmap.tab_chat_normal,"品类").setInactiveIconResource(R.mipmap.tab_chat_select))
+                .addItem(new BottomNavigationItem(R.mipmap.tab_news_normal,"关注").setInactiveIconResource(R.mipmap.tab_news_select))
+                .addItem(new BottomNavigationItem(R.mipmap.tab_news_normal,"进货单").setInactiveIconResource(R.mipmap.tab_news_select))
                 .addItem(new BottomNavigationItem(R.mipmap.tab_mine_normal,"我的").setInactiveIconResource(R.mipmap.tab_mine_select))
                 .initialise();
 
@@ -133,23 +136,31 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
                 transaction.replace(R.id.tb, homePageFragment);
                 break;
             case 1:
-                if (terminalFragment == null) {
-                    terminalFragment = TerminalFragment.newInstance("发现");
+                if (categoryFragment == null) {
+                    categoryFragment = CategoryFragment.newInstance("品类");
                 }
-                transaction.replace(R.id.tb, terminalFragment);
+                transaction.replace(R.id.tb, categoryFragment);
                 break;
             case 2:
-                if (functionFragment == null) {
-                    functionFragment = FunctionFragment.newInstance("消息");
+                if (followFragment == null) {
+                    followFragment = FollowFragment.newInstance("关注");
                 }
-                transaction.replace(R.id.tb, functionFragment);
+                transaction.replace(R.id.tb, followFragment);
                 break;
             case 3:
+                if (purchaseOrderFragment == null) {
+                    purchaseOrderFragment = PurchaseOrderFragment.newInstance("进货单");
+                }
+                transaction.replace(R.id.tb, purchaseOrderFragment);
+                break;
+            case 4:
                 if (mineFragment == null) {
                     mineFragment = MineFragment.newInstance("我的");
                 }
                 transaction.replace(R.id.tb, mineFragment);
                 break;
+
+
         }
 
         transaction.commitAllowingStateLoss();// 事务提交
