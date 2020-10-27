@@ -1,12 +1,22 @@
 package com.bashapplication.mine;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
+
 import com.bashapplication.R;
 import com.bashapplication.bash.BaseActivity;
+import com.bashapplication.utils.GlideUtils;
+import com.bashapplication.utils.PictureSelectUtil;
 import com.bashapplication.view.SexSelectDialog;
 import com.gcssloop.widget.RCImageView;
+import com.luck.picture.lib.PictureSelector;
+import com.luck.picture.lib.config.PictureConfig;
+import com.luck.picture.lib.entity.LocalMedia;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -53,6 +63,8 @@ public class PersonalInfoActivity extends BaseActivity implements SexSelectDialo
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.riv_item_head:
+                //头像
+                PictureSelectUtil.selecPicture(1,activity);
                 break;
             case R.id.lly_platform_accounts:
                 break;
@@ -82,5 +94,21 @@ public class PersonalInfoActivity extends BaseActivity implements SexSelectDialo
     public void onSexResult(String sex) {
         tvSex.setText(sex);
 
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK) {
+            switch (requestCode) {
+                case PictureConfig.REQUEST_CAMERA:
+                    List<LocalMedia> selectList = PictureSelector.obtainMultipleResult(data);
+                    GlideUtils.setImageSrc(activity,rivItemHead,selectList.get(0).getCutPath());
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }

@@ -1,5 +1,6 @@
 package com.bashapplication.main;
 
+import android.Manifest;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -34,6 +35,7 @@ import com.bashapplication.main.fragment.PurchaseOrderFragment;
 import com.bashapplication.network.https.HttpUtils;
 import com.bashapplication.view.BaseDialog;
 import com.blankj.utilcode.util.ToastUtils;
+import com.tbruyelle.rxpermissions3.RxPermissions;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -114,6 +116,38 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
 
         setDefaultFragment();
         // getUpgrade();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        setPermissions();
+
+    }
+
+    private void setPermissions() {
+        RxPermissions rxPermissions = new RxPermissions(activity);
+        String permissions[] = {
+//                Manifest.permission.INTERNET,
+//                Manifest.permission.ACCESS_NETWORK_STATE,
+//                Manifest.permission.MODIFY_AUDIO_SETTINGS,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+//                Manifest.permission.READ_PHONE_STATE,
+//                Manifest.permission.ACCESS_WIFI_STATE,
+//                Manifest.permission.CHANGE_WIFI_STATE,
+//                Manifest.permission.REQUEST_INSTALL_PACKAGES
+        };
+        rxPermissions
+                .request(permissions)
+                .subscribe(granted -> {
+                    if (granted) { // Always true pre-M
+                        Toast.makeText(activity, "yes", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(activity, "no", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+
     }
 
     private void setDefaultFragment() {
