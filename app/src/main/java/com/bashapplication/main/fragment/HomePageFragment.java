@@ -52,35 +52,35 @@ public class HomePageFragment extends BaseFragment {
 
         ArticleGroupBean articleGroupBean1 = new ArticleGroupBean();
         articleGroupBean1.setId("100");
-        articleGroupBean1.setName("杂谈");
+        articleGroupBean1.setName("首页");
 
         ArticleGroupBean articleGroupBean2 = new ArticleGroupBean();
         articleGroupBean2.setId("100");
-        articleGroupBean2.setName("说说");
+        articleGroupBean2.setName("男包");
 
         ArticleGroupBean articleGroupBean3 = new ArticleGroupBean();
         articleGroupBean3.setId("116");
-        articleGroupBean3.setName("高考");
+        articleGroupBean3.setName("女包");
 
         ArticleGroupBean articleGroupBean4 = new ArticleGroupBean();
         articleGroupBean4.setId("117");
-        articleGroupBean4.setName("考研");
+        articleGroupBean4.setName("学生包");
 
         ArticleGroupBean articleGroupBean5 = new ArticleGroupBean();
         articleGroupBean5.setId("118");
-        articleGroupBean5.setName("出国");
+        articleGroupBean5.setName("旅游包");
 
         ArticleGroupBean articleGroupBean6 = new ArticleGroupBean();
         articleGroupBean6.setId("119");
-        articleGroupBean6.setName("创业");
+        articleGroupBean6.setName("登山包");
 
         ArticleGroupBean articleGroupBean7 = new ArticleGroupBean();
         articleGroupBean7.setId("120");
-        articleGroupBean7.setName("求职");
+        articleGroupBean7.setName("打包");
 
         ArticleGroupBean articleGroupBean8 = new ArticleGroupBean();
         articleGroupBean8.setId("121");
-        articleGroupBean8.setName("公考");
+        articleGroupBean8.setName("小包");
 
         data.add(articleGroupBean1);
         data.add(articleGroupBean2);
@@ -174,7 +174,7 @@ public class HomePageFragment extends BaseFragment {
         //创建对象
         SpannableString textSpan = new SpannableString(title.getText());
         //设置首个字符的字体大小
-        textSpan.setSpan(new AbsoluteSizeSpan(DensityUtil.sp2px(getContext(), 18)), 0, title.getText().length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+        textSpan.setSpan(new AbsoluteSizeSpan(DensityUtil.sp2px(getContext(), 16)), 0, title.getText().length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
         //用textView展示出来
         title.setText(textSpan);
     }

@@ -101,15 +101,15 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
         bottomNavigationBar.setTabSelectedListener(this)
                 .setMode(BottomNavigationBar.MODE_FIXED)
                 .setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_STATIC)
-                .setActiveColor("#FF107FFD")
-                .setInActiveColor(R.color.colorPrimary)
+                .setActiveColor(R.color.colorff5034)
+                .setInActiveColor(R.color.color999999)
                 .setBackgroundResource(R.color.white);
 
-        bottomNavigationBar.addItem(new BottomNavigationItem(R.mipmap.tab_home_normal,"首页").setInactiveIconResource(R.mipmap.tab_home_select))
-                .addItem(new BottomNavigationItem(R.mipmap.tab_chat_normal,"品类").setInactiveIconResource(R.mipmap.tab_chat_select))
-                .addItem(new BottomNavigationItem(R.mipmap.tab_news_normal,"关注").setInactiveIconResource(R.mipmap.tab_news_select))
-                .addItem(new BottomNavigationItem(R.mipmap.tab_news_normal,"进货单").setInactiveIconResource(R.mipmap.tab_news_select))
-                .addItem(new BottomNavigationItem(R.mipmap.tab_mine_normal,"我的").setInactiveIconResource(R.mipmap.tab_mine_select))
+        bottomNavigationBar.addItem(new BottomNavigationItem(R.mipmap.tab_home_select,"首页").setInactiveIconResource(R.mipmap.tab_home_normal))
+                .addItem(new BottomNavigationItem(R.mipmap.tab_class_select,"品类").setInactiveIconResource(R.mipmap.tab_class_normal))
+                .addItem(new BottomNavigationItem(R.mipmap.tab_follow_select,"关注").setInactiveIconResource(R.mipmap.tab_follow_normal))
+                .addItem(new BottomNavigationItem(R.mipmap.tab_purchaseorder_select,"进货单").setInactiveIconResource(R.mipmap.tab_purchaseorder_normal))
+                .addItem(new BottomNavigationItem(R.mipmap.tab_mine_select,"我的").setInactiveIconResource(R.mipmap.tab_mine_normal))
                 .initialise();
 
 
@@ -151,7 +151,6 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
     }
 
     private void setDefaultFragment() {
-        FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction transaction = fm.beginTransaction();
         homePageFragment = HomePageFragment.newInstance("首页");
         transaction.replace(R.id.tb, homePageFragment);
@@ -160,7 +159,6 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
 
     @Override
     public void onTabSelected(int position) {
-        FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction transaction = fm.beginTransaction();
         switch (position) {
             case 0:

@@ -68,4 +68,55 @@
         <item name="android:textColor">@color/colorc3c8d4</item>
         <item name="android:textStyle">normal</item>
     </style>
+
+    <style name="normal_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="cffffff_18" parent="@style/normal_text">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="cffffff_16" parent="@style/normal_text">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="cffffff_14" parent="@style/normal_text">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="cffffff_12" parent="@style/normal_text">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="c222222_14" parent="@style/normal_text">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/color222222</item>
+    </style>
+    <style name="c222222_12" parent="@style/normal_text">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/color222222</item>
+    </style>
+
+    <style name="c333333_14" parent="@style/normal_text">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/color333333</item>
+    </style>
+
+
+    <style name="cff5034_16" parent="@style/normal_text">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorff5034</item>
+    </style>
+    <style name="cff5034_14" parent="@style/normal_text">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/colorff5034</item>
+    </style>
+    <style name="cff5034_12" parent="@style/normal_text">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/colorff5034</item>
+    </style>
 </resources>

@@ -9,7 +9,6 @@
     <color name="black">#000000</color>
     <!-- 白色 -->
     <color name="white">#FFFFFF</color>
-    <color name="color999999">#999999</color>
     <color name="color00A5FF">#00A5FF</color>
 
     <color name="colorc1c1cd">#C1C1CD</color>
@@ -22,5 +21,14 @@
     <color name="color2a3138">#2A3138</color>
     <color name="colorf4f5ff">#F4F5FF</color>
     <color name="color68b9ff">#68B9FF</color>
+
+
+
+    <color name="colorff5034">#FF5034</color>
+    <color name="color999999">#999999</color>
+    <color name="color222222">#222222</color>
+    <color name="color333333">#333333</color>
+    <color name="colorffefec">#FFEFEC</color>
+
 
 </resources>
