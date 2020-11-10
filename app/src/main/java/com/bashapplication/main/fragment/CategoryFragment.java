@@ -1,18 +1,23 @@
 package com.bashapplication.main.fragment;
 
 import android.os.Bundle;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.alibaba.android.vlayout.DelegateAdapter;
-import com.alibaba.android.vlayout.VirtualLayoutManager;
 import com.bashapplication.R;
 import com.bashapplication.bash.BaseFragment;
 import com.bashapplication.category.adapter.CategoryLeftAdapter;
+import com.bashapplication.category.adapter.GoodsPicAdapter;
 import com.bashapplication.category.bean.CategoryLeftBean;
+import com.bashapplication.category.bean.GoodsPicBean;
 import com.bashapplication.view.GeneralPtrView;
+import com.bashapplication.view.RecyclerAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,12 +34,15 @@ public class CategoryFragment extends BaseFragment {
     GeneralPtrView ptrview;
     @BindView(R.id.vg_content)
     ViewGroup vgContent;
+    @BindView(R.id.title_title)
+    TextView titleTitle;
+    @BindView(R.id.rly_root)
+    RelativeLayout rlyRoot;
 
     private CategoryLeftAdapter leftAdapter;
+    private GoodsPicAdapter goodsPicAdapter;
     private List<CategoryLeftBean> list_left = new ArrayList<CategoryLeftBean>();
-
-    private List<DelegateAdapter.Adapter> adapterList = new ArrayList<>();
-    private DelegateAdapter delegateAdapter;
+    private List<GoodsPicBean> goodsPicBeanList = new ArrayList<GoodsPicBean>();
 
     public static CategoryFragment newInstance(String param1) {
         CategoryFragment fragment = new CategoryFragment();
@@ -51,18 +59,38 @@ public class CategoryFragment extends BaseFragment {
 
     @Override
     protected void initViews() {
+        titleTitle.setText("商品分类");
+        list_left.clear();
+        CategoryLeftBean categoryLeftBean = new CategoryLeftBean();
+        categoryLeftBean.setName("女士");
+        CategoryLeftBean categoryLeftBean2 = new CategoryLeftBean();
+        categoryLeftBean2.setName("男士");
+        CategoryLeftBean categoryLeftBean3 = new CategoryLeftBean();
+        categoryLeftBean3.setName("功能类");
+        CategoryLeftBean categoryLeftBean4 = new CategoryLeftBean();
+        categoryLeftBean4.setName("配件");
+        CategoryLeftBean categoryLeftBean5 = new CategoryLeftBean();
+        categoryLeftBean5.setName("配件");
 
+        list_left.add(categoryLeftBean);
+        list_left.add(categoryLeftBean2);
+        list_left.add(categoryLeftBean3);
+        list_left.add(categoryLeftBean4);
+        list_left.add(categoryLeftBean5);
 
         LinearLayoutManager lm = new LinearLayoutManager(activity);
         rvLeft.setLayoutManager(lm);
         leftAdapter = new CategoryLeftAdapter(activity, list_left);
         rvLeft.setAdapter(leftAdapter);
 
-        VirtualLayoutManager vlayout = new VirtualLayoutManager(activity);
-        rvRight.setLayoutManager(vlayout);
-        delegateAdapter = new DelegateAdapter(vlayout);
-        delegateAdapter.setAdapters(adapterList);
-        rvRight.setAdapter(delegateAdapter);
+        GridLayoutManager linearLayoutManager = new GridLayoutManager(getActivity(), 3);
+        rvRight.setLayoutManager(linearLayoutManager);
+        goodsPicAdapter = new GoodsPicAdapter(getActivity(), goodsPicBeanList);
+        rvRight.setAdapter(goodsPicAdapter);
+
+        list_left.get(0).setChecked(true);
+        leftAdapter.notifyDataSetChanged();
+        updateRightData(0);
     }
 
     @Override
@@ -84,5 +112,32 @@ public class CategoryFragment extends BaseFragment {
 
             }
         });
+
+        leftAdapter.setOnItemClickListener(new RecyclerAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View itemView, Object item, int pos) {
+                for (CategoryLeftBean b : list_left) {
+                    b.setChecked(false);
+                }
+                list_left.get(pos).setChecked(true);
+                leftAdapter.notifyDataSetChanged();
+
+                goodsPicBeanList.clear();
+                goodsPicAdapter.notifyDataSetChanged();
+
+                updateRightData(pos);
+
+
+            }
+        });
+    }
+
+    private void updateRightData(int pos) {
+
+        for (int i = 0; i < 20; i++) {
+            GoodsPicBean goodsPicBean = new GoodsPicBean();
+            goodsPicBeanList.add(goodsPicBean);
+        }
+        goodsPicAdapter.setNewData(goodsPicBeanList);
     }
 }

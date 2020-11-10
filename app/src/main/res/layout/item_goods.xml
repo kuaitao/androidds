@@ -5,7 +5,7 @@
 
     <LinearLayout
         android:id="@+id/lly_goods"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/shape_white_cor10"
@@ -14,7 +14,7 @@
         <ImageView
             android:id="@+id/iv_goods_pic"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="232dp" />
 
         <LinearLayout
             android:layout_width="match_parent"

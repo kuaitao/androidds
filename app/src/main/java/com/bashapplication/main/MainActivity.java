@@ -97,6 +97,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
 
     @Override
     protected void initViews() {
+
         fm = getSupportFragmentManager();
         bottomNavigationBar.setTabSelectedListener(this)
                 .setMode(BottomNavigationBar.MODE_FIXED)

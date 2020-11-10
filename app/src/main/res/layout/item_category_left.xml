@@ -2,14 +2,20 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:gravity="center"
     android:orientation="vertical"
-    android:paddingTop="15dp"
-    android:paddingBottom="15dp"
-    android:paddingLeft="16dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
     android:paddingRight="2dp">
     <!--为了做cardview左边无圆角把cardview向左移动了14dp(圆角大小)，所以此处让左边空出14+2（原始padding）以免左边展示不全-->
 
+
+    <View
+        android:id="@+id/view_select"
+        android:layout_width="3dp"
+        android:layout_height="18dp"
+        android:layout_marginLeft="14dp"
+        android:layout_centerVertical="true"
+        android:background="@color/colorff5034"/>
 
     <TextView
         android:id="@+id/tv_lable_title"
@@ -17,10 +23,11 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="2dp"
         android:layout_marginTop="2dp"
+        android:layout_centerInParent="true"
         android:ellipsize="end"
         android:singleLine="true"
-        android:text=""
-        android:textColor="@color/color77808b"
+        android:text="aaaa"
+        android:textColor="@color/color666666"
         android:textSize="14sp" />
 
 </RelativeLayout>

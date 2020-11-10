@@ -119,4 +119,8 @@
         <item name="android:textSize">12sp</item>
         <item name="android:textColor">@color/colorff5034</item>
     </style>
+    <style name="c666666_12" parent="@style/normal_text">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/color666666</item>
+    </style>
 </resources>

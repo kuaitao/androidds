@@ -29,19 +29,21 @@ public class CategoryLeftAdapter extends RecyclerAdapter<CategoryLeftBean> {
     @Override
     protected void bindData(RecyclerViewHolder holder, int position, final CategoryLeftBean item) {
         TextView tv_lable_title = holder.findViewById(R.id.tv_lable_title);
-
+        View view_select = holder.findViewById(R.id.view_select);
         tv_lable_title.setText(item.getName());
 
         if(item.isChecked()){
 
-            tv_lable_title.setTextColor(ctx.getResources().getColor(R.color.color222427));
-            tv_lable_title.setTextSize(16);
+            tv_lable_title.setTextColor(ctx.getResources().getColor(R.color.colorff5034));
+            tv_lable_title.setTextSize(14);
             tv_lable_title.setTypeface(Typeface.SANS_SERIF, Typeface.BOLD);
+            view_select.setVisibility(View.VISIBLE);
         }else{
 
-            tv_lable_title.setTextColor(ctx.getResources().getColor(R.color.color77808b));
+            tv_lable_title.setTextColor(ctx.getResources().getColor(R.color.color666666));
             tv_lable_title.setTextSize(14);
             tv_lable_title.setTypeface(Typeface.SANS_SERIF, Typeface.NORMAL);
+            view_select.setVisibility(View.GONE);
         }
 
     }

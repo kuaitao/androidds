@@ -1,23 +1,23 @@
-package com.bashapplication.mine;
+package com.bashapplication.mine.adapter;
 
 import android.content.Context;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.alibaba.android.vlayout.LayoutHelper;
-import com.alibaba.android.vlayout.layout.StaggeredGridLayoutHelper;
+import com.alibaba.android.vlayout.layout.GridLayoutHelper;
 import com.bashapplication.R;
+import com.bashapplication.mine.bean.GoodsBean;
 import com.bashapplication.utils.GlideUtils;
 import com.bashapplication.view.DelegateRecyclerAdapter;
 
 public class GoodsAdapter extends DelegateRecyclerAdapter<GoodsBean> {
 
     private Context mContext;
-    private StaggeredGridLayoutHelper lh;
-    public GoodsAdapter(Context context, StaggeredGridLayoutHelper lh){
+    private GridLayoutHelper lh;
+    public GoodsAdapter(Context context, GridLayoutHelper lh){
         super(context,null);
         this.mContext = context;
         this.lh = lh;
@@ -34,13 +34,7 @@ public class GoodsAdapter extends DelegateRecyclerAdapter<GoodsBean> {
         return R.layout.item_goods;
     }
 
-//    @Override
-//    public void onBindViewHolder(RecyclerViewHolder holder, int position) {
-//        super.onBindViewHolder(holder, position);
-//
-//        ImageView iv_goods_pic = holder.findViewById(R.id.iv_goods_pic);
-//
-//    }
+
 
     @Override
     protected void bindData(RecyclerViewHolder holder, int position, GoodsBean item) {

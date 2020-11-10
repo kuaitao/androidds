@@ -1,4 +1,4 @@
-package com.bashapplication.mine;
+package com.bashapplication.mine.bean;
 
 public class GoodsBean {
 

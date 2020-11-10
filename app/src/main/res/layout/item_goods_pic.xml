@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/vg_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <com.gcssloop.widget.RCImageView
+        android:id="@+id/iv_goods_pic"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="centerCrop"
+        android:layout_centerHorizontal="true"
+        app:round_corner="2dp"/>
+
+    <TextView
+        android:id="@+id/tv_name"
+        style="@style/c666666_12"
+        android:layout_marginTop="3dp"
+        android:text="手包"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:layout_below="@+id/iv_goods_pic"
+        android:maxEms="8"
+        android:layout_centerHorizontal="true"
+        android:paddingBottom="8dp"/>
+
+
+</RelativeLayout>

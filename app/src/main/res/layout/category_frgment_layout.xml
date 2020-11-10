@@ -6,12 +6,14 @@
     android:gravity="center_horizontal"
     android:orientation="vertical">
 
-<!--    <include layout="@layout/include_title_pink" />-->
+    <include layout="@layout/share_title" />
+
+    <include layout="@layout/share_search" />
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="5dp">
 
         <LinearLayout
             android:id="@+id/vg_content"
@@ -39,6 +41,7 @@
                 android:id="@+id/ptrview"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
                 android:layout_weight="7">
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -49,7 +52,6 @@
 
         </LinearLayout>
 
-<!--        <include layout="@layout/view_error_layout" />-->
     </FrameLayout>
 
 
