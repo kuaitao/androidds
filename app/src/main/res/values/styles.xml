@@ -100,12 +100,19 @@
         <item name="android:textSize">12sp</item>
         <item name="android:textColor">@color/color222222</item>
     </style>
+    <style name="c222222_16" parent="@style/normal_text">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/color222222</item>
+    </style>
 
     <style name="c333333_14" parent="@style/normal_text">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/color333333</item>
     </style>
-
+    <style name="c999999_16" parent="@style/normal_text">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/color999999</item>
+    </style>
 
     <style name="cff5034_16" parent="@style/normal_text">
         <item name="android:textSize">16sp</item>

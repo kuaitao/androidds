@@ -1,25 +1,25 @@
 package com.bashapplication.main.fragment;
 
 import android.os.Bundle;
-import android.view.ViewGroup;
+import android.view.View;
 
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.alibaba.android.vlayout.DelegateAdapter;
 import com.alibaba.android.vlayout.VirtualLayoutManager;
 import com.alibaba.android.vlayout.layout.GridLayoutHelper;
-import com.alibaba.android.vlayout.layout.StaggeredGridLayoutHelper;
 import com.bashapplication.R;
 import com.bashapplication.bash.BaseFragment;
+import com.bashapplication.mine.AddAddressActivity;
 import com.bashapplication.mine.adapter.GoodsAdapter;
 import com.bashapplication.mine.bean.GoodsBean;
-import com.bashapplication.utils.Utils;
+import com.bashapplication.utils.JumperUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 public class MineFragment extends BaseFragment {
 
@@ -76,10 +76,10 @@ public class MineFragment extends BaseFragment {
     @Override
     protected void initData() {
 
-        for (int i = 0; i <10 ; i++) {
+        for (int i = 0; i < 10; i++) {
             GoodsBean goodsBean;
 
-                 goodsBean = new GoodsBean(R.mipmap.test1,"秋冬新款纯牛皮包秋冬新款纯牛皮包 秋冬新款纯...","256.20");
+            goodsBean = new GoodsBean(R.mipmap.test1, "秋冬新款纯牛皮包秋冬新款纯牛皮包 秋冬新款纯...", "256.20");
 
             goodsBeanList.add(goodsBean);
         }
@@ -90,5 +90,16 @@ public class MineFragment extends BaseFragment {
     @Override
     protected void setListener() {
 
+    }
+
+    @OnClick({R.id.iv_user_head})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.iv_user_head:
+
+                JumperUtils.JumpTo(activity, AddAddressActivity.class);
+                break;
+
+        }
     }
 }

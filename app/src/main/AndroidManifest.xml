@@ -45,12 +45,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".mine.PersonalInfoActivity">
-
-        </activity>
+        <activity android:name=".mine.AddAddressActivity"></activity>
+        <activity android:name=".mine.PersonalInfoActivity"></activity>
         <activity android:name=".login.SelectCountryActivity" />
         <activity android:name=".login.PhoneYzmActivity" />
-        <activity android:name=".login.PhoneLoginActivity"></activity>
+        <activity android:name=".login.PhoneLoginActivity" />
         <activity android:name=".main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
