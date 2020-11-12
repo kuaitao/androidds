@@ -109,7 +109,7 @@ public class HomePageFragment extends BaseFragment {
         //创建对象
         SpannableString textSpan = new SpannableString(title.getText());
         //设置首个字符的字体大小
-        textSpan.setSpan(new AbsoluteSizeSpan(DensityUtil.sp2px(getContext(), 18)), 0, title.getText().length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+        textSpan.setSpan(new AbsoluteSizeSpan(DensityUtil.sp2px(getContext(), 16)), 0, title.getText().length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
         //用textView展示出来
         title.setText(textSpan);
 

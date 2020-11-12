@@ -1,32 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    android:orientation="vertical">
+    android:background="@color/white">
 
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@drawable/shap_home_bg" />
+
+
+    <LinearLayout
+        android:id="@+id/lly_title"
+        android:layout_width="match_parent"
+        android:layout_height="34dp"
+        android:layout_margin="15dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/shape_white_cor40"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:background="@mipmap/icon_scan" />
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="12dp"
+                android:background="@color/colorcccccc" />
+
+            <EditText
+                android:id="@+id/et_yzm"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.0"
+                android:background="@android:color/transparent"
+                android:hint="请输入关键词"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:textColor="@color/color222222"
+                android:textColorHint="@color/color999999"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="12dp"
+                android:background="@mipmap/icon_camera" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="8dp"
+            android:background="@mipmap/icon_info" />
+
+    </LinearLayout>
 
     <com.flyco.tablayout.SlidingTabLayout
         android:id="@+id/tl_entrance_tab"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:background="@color/white"
-        app:tl_indicator_color="@color/colorf54a76"
-        app:tl_textUnselectColor="@color/color9ca4b7"
-        app:tl_divider_color="@color/colorf54a76"
-        app:tl_textSelectColor="@color/color222427"
-        app:tl_textsize="@dimen/sp_14"
-        app:tl_textBold="SELECT"
+        android:layout_height="40dp"
+        android:layout_below="@+id/lly_title"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        app:tl_divider_color="@color/white"
+        app:tl_indicator_color="@color/white"
         app:tl_indicator_corner_radius="3dp"
         app:tl_indicator_height="5dp"
-        app:tl_indicator_width="23dp"/>
+        app:tl_indicator_width="23dp"
+        app:tl_textBold="SELECT"
+        app:tl_textSelectColor="@color/white"
+        app:tl_textUnselectColor="@color/white"
+        app:tl_textsize="@dimen/sp_14" />
+
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/vp_entrance"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/tl_entrance_tab"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
         android:layout_marginTop="10dp" />
 
-<!--    <include layout="@layout/view_error_layout" />-->
-</LinearLayout>
+
+    <!--    <include layout="@layout/view_error_layout" />-->
+</RelativeLayout>
