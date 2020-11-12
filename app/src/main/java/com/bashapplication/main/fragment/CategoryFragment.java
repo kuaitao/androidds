@@ -136,6 +136,26 @@ public class CategoryFragment extends BaseFragment {
 
         for (int i = 0; i < 20; i++) {
             GoodsPicBean goodsPicBean = new GoodsPicBean();
+
+            switch (pos){
+                case  0:
+                    goodsPicBean.setName("女士");
+                    break;
+                case  1:
+                    goodsPicBean.setName("男士");
+                    break;
+                case  2:
+                    goodsPicBean.setName("功能");
+                    break;
+                case  3:
+                    goodsPicBean.setName("配件");
+                    break;
+                case  4:
+                    goodsPicBean.setName("配件");
+                    break;
+            }
+
+            rvRight.scrollToPosition(0);
             goodsPicBeanList.add(goodsPicBean);
         }
         goodsPicAdapter.setNewData(goodsPicBeanList);

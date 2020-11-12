@@ -21,7 +21,9 @@ public class GoodsPicAdapter extends BaseQuickAdapter<GoodsPicBean, BaseViewHold
 
     @Override
     protected void convert(BaseViewHolder helper, final GoodsPicBean item) {
-        helper.addOnClickListener(R.id.iv_goods_pic).setBackgroundRes(R.id.iv_goods_pic,R.mipmap.test1);
+        helper.addOnClickListener(R.id.iv_goods_pic).setBackgroundRes(R.id.iv_goods_pic,R.mipmap.test1)
+        .setText(R.id.tv_name,item.getName());
+
 
     }
 }
