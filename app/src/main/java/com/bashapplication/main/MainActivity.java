@@ -117,12 +117,13 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
 
         setDefaultFragment();
         // getUpgrade();
+        setPermissions();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        setPermissions();
+
 
     }
 

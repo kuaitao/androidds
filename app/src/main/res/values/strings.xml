@@ -17,7 +17,7 @@
     <string name="user_head">头像</string>
     <string name="sex_str">性别</string>
     <string name="birthday_str">年龄</string>
-    <string name="birthday_default">写下你的年龄</string>
+    <string name="birthday_default">您的年龄</string>
     <string name="platform_accounts">平台账号</string>
     <string name="university_default">母校在哪里</string>
     <string name="hometown_str">家乡</string>
@@ -28,5 +28,7 @@
     <string name="user_intro_default">说点什么,让大家快速认识你</string>
     <string name="my_address">我的地址</string>
     <string name="my_address_default">写一下吧,不小心收到惊喜怎么办</string>
-    <string name="personal_info">个人信心</string>
+    <string name="personal_info">个人信息</string>
+    <string name="address_list">收货地址</string>
+    <string name="upload_needs">上传需求</string>
 </resources>

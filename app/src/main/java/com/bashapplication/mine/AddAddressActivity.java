@@ -1,6 +1,5 @@
 package com.bashapplication.mine;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,12 +10,8 @@ import com.bashapplication.bash.BaseActivity;
 import com.bashapplication.mine.bean.UserLabelSelectBean;
 import com.bashapplication.utils.DensityUtil;
 import com.bashapplication.utils.ThreadPoolManager;
-import com.bashapplication.view.FooAnnotationExclusionStrategy;
 import com.google.android.flexbox.FlexboxLayout;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
 
 import java.util.ArrayList;
 import java.util.List;

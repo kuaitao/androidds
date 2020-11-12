@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     android:orientation="vertical">
 
     <include layout="@layout/share_title" />
@@ -16,33 +15,29 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
+            android:paddingLeft="15dp"
+            android:paddingTop="16dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="15dp"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:paddingLeft="10dp"
-                android:paddingTop="15dp"
-                android:paddingRight="15dp"
-                android:paddingBottom="10dp">
-
+                android:orientation="horizontal">
                 <TextView
                     android:id="@+id/tv_head_lable"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1.0"
-                    android:gravity="center_vertical"
+                    style="@style/c222222_16"
+                    android:layout_weight="1"
                     android:text="@string/user_head"
-                    android:textColor="@color/color2a3138"
-                    android:textSize="15sp" />
+                     />
 
 
                 <com.gcssloop.widget.RCImageView
                     android:id="@+id/riv_item_head"
-                    android:layout_width="61dp"
-                    android:layout_height="61dp"
+                    android:layout_width="37.5dp"
+                    android:layout_height="37.5dp"
                     android:adjustViewBounds="true"
                     android:scaleType="centerCrop"
                     android:src="@mipmap/icon_my_user"
@@ -52,28 +47,21 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="0dp"
-                android:layout_marginRight="15dp"
-                android:background="@color/colorf4f5ff" />
+                android:layout_marginTop="16dp"
+                android:background="@color/coloreeeeee" />
 
             <LinearLayout
                 android:id="@+id/lly_platform_accounts"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingTop="16dp"
                 android:orientation="horizontal"
-                android:paddingLeft="15dp"
-                android:paddingTop="15dp"
-                android:paddingRight="15dp"
-                android:paddingBottom="15dp">
+               >
 
                 <TextView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/c222222_16"
                     android:text="@string/platform_accounts"
-                    android:textColor="@color/color2a3138"
-                    android:textSize="15sp" />
+                     />
 
                 <TextView
                     android:id="@+id/tv_platform_accounts"
@@ -81,39 +69,32 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="1.0"
-                    android:drawableRight="@mipmap/my_more_icon"
                     android:drawablePadding="5dp"
                     android:gravity="right"
-                    android:textColor="@color/color77808b"
-                    android:textColorHint="@color/colorc3c8d4"
-                    android:textSize="15sp" />
+                    android:textColor="@color/color999999"
+                    android:textColorHint="@color/color999999"
+                    android:textSize="16sp" />
             </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="0dp"
-                android:layout_marginRight="15dp"
-                android:background="@color/colorf4f5ff" />
+                android:layout_marginTop="16dp"
+                android:background="@color/coloreeeeee" />
+
 
             <LinearLayout
                 android:id="@+id/lly_nickname_lable"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingTop="16dp"
                 android:orientation="horizontal"
-                android:paddingLeft="15dp"
-                android:paddingTop="15dp"
-                android:paddingRight="15dp"
-                android:paddingBottom="15dp">
+               >
 
                 <TextView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/c222222_16"
                     android:text="@string/nick_name"
-                    android:textColor="@color/color2a3138"
-                    android:textSize="15sp" />
+                     />
 
                 <TextView
                     android:id="@+id/tv_nickname"
@@ -124,34 +105,31 @@
                     android:drawableRight="@mipmap/my_more_icon"
                     android:drawablePadding="10dp"
                     android:gravity="right"
-                    android:hint="飘洋过海来看你"
-                    android:textColor="@color/color77808b"
-                    android:textColorHint="@color/colorc3c8d4"
-                    android:textSize="15sp" />
+                    android:hint="您的昵称"
+                    android:textColor="@color/color999999"
+                    android:textColorHint="@color/color999999"
+                    android:textSize="16sp" />
             </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
-                android:background="@color/colorf4f5ff" />
+                android:layout_marginTop="16dp"
+                android:background="@color/coloreeeeee" />
+
 
             <LinearLayout
                 android:id="@+id/lly_sex_lable"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingTop="16dp"
                 android:orientation="horizontal"
-                android:paddingLeft="15dp"
-                android:paddingTop="15dp"
-                android:paddingRight="15dp"
-                android:paddingBottom="15dp">
+                >
 
                 <TextView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/c222222_16"
                     android:text="@string/sex_str"
-                    android:textColor="@color/color2a3138"
-                    android:textSize="15sp" />
+                    />
 
                 <TextView
                     android:id="@+id/tv_sex"
@@ -162,35 +140,30 @@
                     android:drawableRight="@mipmap/my_more_icon"
                     android:drawablePadding="5dp"
                     android:gravity="right"
-                    android:textColor="@color/color77808b"
-                    android:textColorHint="@color/colorc3c8d4"
-                    android:textSize="15sp" />
+                    android:textColor="@color/color999999"
+                    android:textColorHint="@color/color999999"
+                    android:textSize="16sp" />
             </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="0dp"
-                android:layout_marginRight="15dp"
-                android:background="@color/colorf4f5ff" />
+                android:layout_marginTop="16dp"
+                android:background="@color/coloreeeeee" />
+
 
             <LinearLayout
                 android:id="@+id/lly_birthday_lable"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingTop="16dp"
                 android:orientation="horizontal"
-                android:paddingLeft="15dp"
-                android:paddingTop="15dp"
-                android:paddingRight="15dp"
-                android:paddingBottom="15dp">
+                >
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/c222222_16"
                     android:text="@string/birthday_str"
-                    android:textColor="@color/color2a3138"
-                    android:textSize="15sp" />
+                    />
 
                 <TextView
                     android:id="@+id/tv_birthday"
@@ -202,189 +175,9 @@
                     android:drawablePadding="5dp"
                     android:gravity="right"
                     android:hint="@string/birthday_default"
-                    android:textColor="@color/color77808b"
-                    android:textColorHint="@color/colorc3c8d4"
-                    android:textSize="15sp" />
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="0dp"
-                android:layout_marginRight="15dp"
-                android:background="@color/colorf4f5ff" />
-
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="7dp"
-                android:background="@color/colorf4f5ff"
-                android:visibility="gone" />
-
-            <LinearLayout
-                android:id="@+id/ll_click"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingLeft="15dp"
-                android:paddingTop="15dp"
-                android:paddingRight="15dp"
-                android:paddingBottom="15dp"
-                android:visibility="gone">
-
-                <TextView
-                    android:id="@+id/tv_hometown_lable"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/hometown_str"
-                    android:textColor="@color/color2a3138"
-                    android:textSize="15sp" />
-
-                <TextView
-                    android:id="@+id/iv_hometown"
-                    android:layout_width="0px"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:layout_weight="1.0"
-                    android:drawableRight="@mipmap/my_more_icon"
-                    android:drawablePadding="5dp"
-                    android:gravity="right"
-                    android:hint="@string/hometown_default"
-                    android:textColor="@color/color77808b"
-                    android:textColorHint="@color/colorc3c8d4"
-                    android:textSize="15sp" />
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="0dp"
-                android:layout_marginRight="15dp"
-                android:background="@color/colorf4f5ff"
-                android:visibility="gone" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:orientation="horizontal"
-                android:paddingLeft="15dp"
-                android:paddingTop="15dp"
-                android:paddingRight="15dp"
-                android:paddingBottom="15dp"
-                android:visibility="gone">
-
-                <TextView
-                    android:id="@+id/tv_interest_lable"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="50dp"
-                    android:text="@string/interest_str"
-                    android:textColor="@color/color2a3138"
-                    android:textSize="15sp" />
-
-                <TextView
-                    android:id="@+id/iv_interest"
-                    android:layout_width="0px"
-
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:layout_weight="1.0"
-                    android:drawableRight="@mipmap/my_more_icon"
-                    android:drawablePadding="5dp"
-                    android:gravity="right"
-                    android:hint="@string/interest_default"
-                    android:textColor="@color/color77808b"
-                    android:textColorHint="@color/colorc3c8d4"
-                    android:textSize="15sp" />
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="0dp"
-                android:layout_marginRight="15dp"
-                android:background="@color/colorf4f5ff"
-                android:visibility="gone" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:orientation="horizontal"
-                android:paddingLeft="15dp"
-                android:paddingTop="15dp"
-                android:paddingRight="15dp"
-                android:paddingBottom="15dp"
-                android:visibility="gone">
-
-                <TextView
-                    android:id="@+id/tv_intro_lable"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/user_intro"
-                    android:textColor="@color/color2a3138"
-                    android:textSize="15sp" />
-
-                <TextView
-                    android:id="@+id/tv_intro"
-                    android:layout_width="0px"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:layout_weight="1.0"
-                    android:drawableRight="@mipmap/my_more_icon"
-                    android:drawablePadding="5dp"
-                    android:ellipsize="end"
-                    android:gravity="right"
-                    android:hint="@string/user_intro_default"
-                    android:maxLines="3"
-                    android:textColor="@color/color77808b"
-                    android:textColorHint="@color/colorc3c8d4"
-                    android:textSize="15sp" />
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="7dp"
-                android:layout_marginTop="0dp"
-                android:background="@color/colorf4f5ff"
-                android:visibility="gone" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:orientation="horizontal"
-                android:paddingLeft="15dp"
-                android:paddingTop="15dp"
-                android:paddingRight="15dp"
-                android:paddingBottom="15dp"
-                android:visibility="gone">
-
-                <TextView
-                    android:id="@+id/tv_myaddress_lable"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/my_address"
-                    android:textColor="@color/color2a3138"
-                    android:textSize="15sp" />
-
-                <TextView
-                    android:id="@+id/tv_my_address"
-                    android:layout_width="0px"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:layout_weight="1.0"
-                    android:drawableRight="@mipmap/my_more_icon"
-                    android:drawablePadding="5dp"
-                    android:gravity="right"
-                    android:hint="@string/my_address_default"
-                    android:textColor="@color/color77808b"
-                    android:textColorHint="@color/colorc3c8d4"
-                    android:textSize="15sp" />
+                    android:textColor="@color/color999999"
+                    android:textColorHint="@color/color999999"
+                    android:textSize="16sp" />
             </LinearLayout>
 
 

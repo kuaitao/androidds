@@ -10,7 +10,9 @@ import com.alibaba.android.vlayout.VirtualLayoutManager;
 import com.alibaba.android.vlayout.layout.GridLayoutHelper;
 import com.bashapplication.R;
 import com.bashapplication.bash.BaseFragment;
-import com.bashapplication.mine.AddAddressActivity;
+import com.bashapplication.mine.AddressListActivity;
+import com.bashapplication.mine.PersonalInfoActivity;
+import com.bashapplication.mine.UploadNeedsActivity;
 import com.bashapplication.mine.adapter.GoodsAdapter;
 import com.bashapplication.mine.bean.GoodsBean;
 import com.bashapplication.utils.JumperUtils;
@@ -92,14 +94,22 @@ public class MineFragment extends BaseFragment {
 
     }
 
-    @OnClick({R.id.iv_user_head})
+    @OnClick({R.id.iv_user_head,R.id.lly_address,R.id.lly_browse_recode})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.iv_user_head:
 
-                JumperUtils.JumpTo(activity, AddAddressActivity.class);
+                JumperUtils.JumpTo(activity, PersonalInfoActivity.class);
+                break;
+            case R.id.lly_address:
+                JumperUtils.JumpTo(activity, AddressListActivity.class);
+                break;
+            case R.id.lly_browse_recode:
+                JumperUtils.JumpTo(activity, UploadNeedsActivity.class);
                 break;
 
         }
     }
+
+
 }

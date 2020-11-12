@@ -100,6 +100,7 @@
                 android:background="@color/white" />
 
             <LinearLayout
+                android:id="@+id/lly_browse_recode"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -107,6 +108,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/tv_browse_recode"
                     style="@style/cffffff_18"
                     android:text="123" />
 
@@ -124,6 +126,7 @@
                 android:background="@color/white" />
 
             <LinearLayout
+                android:id="@+id/lly_address"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -131,6 +134,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/tv_address"
                     style="@style/cffffff_18"
                     android:text="1" />
 

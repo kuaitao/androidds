@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/rly_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/tv_name"
+            style="@style/c222222_16"
+            android:text="张三"/>
+
+        <TextView
+            android:id="@+id/tv_phone"
+            style="@style/c999999_12"
+            android:text="15001030322"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="2dp"
+            android:layout_toRightOf="@+id/tv_name"/>
+
+
+        <TextView
+            android:id="@+id/tv_flag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorffefec"
+            android:textSize="12sp"
+            android:text="公司"
+            android:layout_toRightOf="@+id/tv_phone"
+            android:layout_marginLeft="10dp"
+            android:padding="3dp"
+            android:textColor="@color/colorff5034"
+            />
+        <TextView
+            android:id="@+id/tv_address"
+            style="@style/c666666_14"
+            android:layout_marginTop="7dp"
+            android:layout_below="@+id/tv_name"
+            android:text="河南省洛阳市涧西区方林路东方红广场B座"
+            />
+
+        <ImageView
+            android:id="@+id/iv_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/icon_edit"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:padding="3dp"/>
+
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/coloreeeeee"/>
+
+</LinearLayout>

@@ -45,8 +45,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".mine.AddAddressActivity"></activity>
-        <activity android:name=".mine.PersonalInfoActivity"></activity>
+        <activity android:name=".mine.UploadNeedsActivity"></activity>
+        <activity android:name=".mine.AddressListActivity" />
+        <activity android:name=".mine.AddAddressActivity" />
+        <activity android:name=".mine.PersonalInfoActivity" />
         <activity android:name=".login.SelectCountryActivity" />
         <activity android:name=".login.PhoneYzmActivity" />
         <activity android:name=".login.PhoneLoginActivity" />
