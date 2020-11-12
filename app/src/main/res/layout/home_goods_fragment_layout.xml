@@ -5,6 +5,8 @@
     android:orientation="vertical">
 
 
+
+
     <com.bashapplication.view.GeneralPtrView
         android:id="@+id/ptrview"
         android:layout_width="match_parent"
