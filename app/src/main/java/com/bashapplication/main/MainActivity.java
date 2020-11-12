@@ -143,9 +143,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
                 .request(permissions)
                 .subscribe(granted -> {
                     if (granted) { // Always true pre-M
-                        Toast.makeText(activity, "yes", Toast.LENGTH_SHORT).show();
                     } else {
-                        Toast.makeText(activity, "no", Toast.LENGTH_SHORT).show();
                     }
                 });
 

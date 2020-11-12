@@ -3,6 +3,8 @@ package com.bashapplication.main.fragment;
 import android.os.Bundle;
 import android.view.View;
 
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.alibaba.android.vlayout.DelegateAdapter;
@@ -13,7 +15,9 @@ import com.bashapplication.bash.BaseFragment;
 import com.bashapplication.mine.AddressListActivity;
 import com.bashapplication.mine.PersonalInfoActivity;
 import com.bashapplication.mine.UploadNeedsActivity;
+import com.bashapplication.mine.adapter.AddressListAdapter;
 import com.bashapplication.mine.adapter.GoodsAdapter;
+import com.bashapplication.mine.adapter.GoodsBaseAdapter;
 import com.bashapplication.mine.bean.GoodsBean;
 import com.bashapplication.utils.JumperUtils;
 
@@ -29,7 +33,7 @@ public class MineFragment extends BaseFragment {
     RecyclerView rv_view;
 
     private List<GoodsBean> goodsBeanList = new ArrayList<>();
-    private GoodsAdapter goodsAdapter;
+    private GoodsBaseAdapter goodsAdapter;
 
     public static MineFragment newInstance(String param1) {
         MineFragment fragment = new MineFragment();
@@ -47,13 +51,13 @@ public class MineFragment extends BaseFragment {
     @Override
     protected void initViews() {
 
-        VirtualLayoutManager vlayout = new VirtualLayoutManager(getContext());
-        rv_view.setLayoutManager(vlayout);
-
-        GridLayoutHelper staggeredGridLayoutHelper = new GridLayoutHelper(2);
-        staggeredGridLayoutHelper.setVGap(10);
-        staggeredGridLayoutHelper.setHGap(10);
-        goodsAdapter = new GoodsAdapter(getContext(), staggeredGridLayoutHelper);
+//        VirtualLayoutManager vlayout = new VirtualLayoutManager(getContext());
+//        rv_view.setLayoutManager(vlayout);
+//
+//        GridLayoutHelper staggeredGridLayoutHelper = new GridLayoutHelper(2);
+//        staggeredGridLayoutHelper.setVGap(10);
+//        staggeredGridLayoutHelper.setHGap(10);
+//        goodsAdapter = new GoodsAdapter(getContext(), staggeredGridLayoutHelper);
 //            @Override
 //            public void onBindViewHolder(RecyclerViewHolder holder, int position) {
 //                super.onBindViewHolder(holder, position);
@@ -67,12 +71,18 @@ public class MineFragment extends BaseFragment {
 //            }
 //        };
 
-        List<DelegateAdapter.Adapter> adapters = new ArrayList<>();
-        adapters.add(goodsAdapter);
+//        List<DelegateAdapter.Adapter> adapters = new ArrayList<>();
+//        adapters.add(goodsAdapter);
+//
+//        DelegateAdapter delegateAdapter = new DelegateAdapter(vlayout);
+//        delegateAdapter.setAdapters(adapters);
+//        rv_view.setAdapter(delegateAdapter);
 
-        DelegateAdapter delegateAdapter = new DelegateAdapter(vlayout);
-        delegateAdapter.setAdapters(adapters);
-        rv_view.setAdapter(delegateAdapter);
+
+        GridLayoutManager linearLayoutManager = new GridLayoutManager(activity,2);
+        rv_view.setLayoutManager(linearLayoutManager);
+        goodsAdapter = new GoodsBaseAdapter(activity, goodsBeanList);
+        rv_view.setAdapter(goodsAdapter);
     }
 
     @Override
@@ -85,7 +95,7 @@ public class MineFragment extends BaseFragment {
 
             goodsBeanList.add(goodsBean);
         }
-        goodsAdapter.setData(goodsBeanList);
+        goodsAdapter.addData(goodsBeanList);
 
     }
 

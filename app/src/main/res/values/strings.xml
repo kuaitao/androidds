@@ -1,12 +1,12 @@
 <resources>
-    <string name="app_name">kufang</string>
+    <string name="app_name">货咕咕</string>
 
 
     <string name="main_homepage">主页</string>
     <string name="main_terminal">终端</string>
     <string name="main_function">功能</string>
     <string name="main_mine">我的</string>
-    <string name="phone_login">手机登录</string>
+    <string name="phone_login">手机号登录</string>
     <string name="login_phone_inert_hint">请输入手机号</string>
     <string name="register_post_code">获取验证码</string>
 
@@ -31,4 +31,5 @@
     <string name="personal_info">个人信息</string>
     <string name="address_list">收货地址</string>
     <string name="upload_needs">上传需求</string>
+    <string name="follow_goods">关注商品</string>
 </resources>
