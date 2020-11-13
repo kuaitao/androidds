@@ -19,6 +19,7 @@ import com.bashapplication.mine.adapter.AddressListAdapter;
 import com.bashapplication.mine.adapter.GoodsAdapter;
 import com.bashapplication.mine.adapter.GoodsBaseAdapter;
 import com.bashapplication.mine.bean.GoodsBean;
+import com.bashapplication.mine.map.AddressMapActivity;
 import com.bashapplication.utils.JumperUtils;
 
 import java.util.ArrayList;
@@ -112,7 +113,7 @@ public class MineFragment extends BaseFragment {
                 JumperUtils.JumpTo(activity, PersonalInfoActivity.class);
                 break;
             case R.id.lly_address:
-                JumperUtils.JumpTo(activity, AddressListActivity.class);
+                JumperUtils.JumpTo(activity,  AddressMapActivity.class);
                 break;
             case R.id.lly_browse_recode:
                 JumperUtils.JumpTo(activity, UploadNeedsActivity.class);

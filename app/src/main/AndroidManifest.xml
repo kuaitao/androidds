@@ -45,16 +45,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".mine.MyFollowActivity"></activity>
+        <activity android:name=".mine.map.AddressMapActivity"></activity>
+        <activity android:name=".mine.MyFollowActivity" />
         <activity android:name=".mine.UploadNeedsActivity" />
         <activity android:name=".mine.AddressListActivity" />
         <activity android:name=".mine.AddAddressActivity" />
         <activity android:name=".mine.PersonalInfoActivity" />
         <activity android:name=".login.SelectCountryActivity" />
         <activity android:name=".login.PhoneYzmActivity" />
-        <activity android:name=".login.PhoneLoginActivity" >
-
-        </activity>
+        <activity android:name=".login.PhoneLoginActivity"></activity>
         <activity android:name=".main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -88,6 +87,10 @@
         <meta-data
             android:name="APP_ID"
             android:value="${applicationId}" />
+
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="F1HEMjHdi5hPufvUNITPaWQpiff5Doqb" />
 
         <activity android:name=".main.ActErrorActivity" />
     </application>

@@ -2,6 +2,8 @@ package com.bashapplication.main;
 
 import androidx.multidex.MultiDexApplication;
 
+import com.baidu.mapapi.CoordType;
+import com.baidu.mapapi.SDKInitializer;
 import com.bashapplication.R;
 import com.bashapplication.network.https.HttpUtils;
 import com.bashapplication.view.CrashHandler;
@@ -42,6 +44,8 @@ public class MyApplication extends MultiDexApplication {
       //  CrashHandler.getInstance().init(this);
         LiveEventBus.config().setContext(this).lifecycleObserverAlwaysActive(true);
         AutoSizeConfig.getInstance().setCustomFragment(true);
+        //在使用SDK各组件之前初始化context信息，传入ApplicationContext
+        SDKInitializer.initialize(this);
 
     }
 
