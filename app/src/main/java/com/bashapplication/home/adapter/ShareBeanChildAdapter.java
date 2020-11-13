@@ -38,6 +38,7 @@ public class ShareBeanChildAdapter extends BannerAdapter<ShareBannerBean, ShareB
 
     }
 
+
     @Override
     public void onBindView(BannerViewHolder holder, ShareBannerBean data, int position, int size) {
         //holder.imageView.setImageResource(data.imageRes);

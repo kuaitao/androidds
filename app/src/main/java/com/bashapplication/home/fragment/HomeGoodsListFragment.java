@@ -6,16 +6,20 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.alibaba.android.vlayout.DelegateAdapter;
 import com.alibaba.android.vlayout.VirtualLayoutManager;
+import com.alibaba.android.vlayout.layout.GridLayoutHelper;
 import com.alibaba.android.vlayout.layout.LinearLayoutHelper;
 import com.bashapplication.R;
 import com.bashapplication.bash.BaseFragment;
 import com.bashapplication.home.adapter.BannerAdapter;
+import com.bashapplication.home.adapter.CategoryModuleAdapter;
+import com.bashapplication.home.adapter.TestBean1;
 import com.bashapplication.home.bean.ArticleGroupBean;
 import com.bashapplication.home.bean.ForumListBean;
 import com.bashapplication.home.bean.ShareBannerBean;
 import com.bashapplication.home.contract.ForumListContract;
 import com.bashapplication.home.presenter.ForumListPresenter;
 import com.bashapplication.login.bean.UserBean;
+import com.bashapplication.utils.DensityUtil;
 import com.bashapplication.view.GeneralPtrView;
 import com.zhouyou.http.exception.ApiException;
 import com.zhouyou.http.model.HttpParams;
@@ -30,7 +34,8 @@ public class HomeGoodsListFragment extends BaseFragment implements ForumListCont
     RecyclerView rv_view;
     @BindView(R.id.ptrview)
     GeneralPtrView ptrview;
-    private BannerAdapter bannerAdapter;
+    private BannerAdapter bannerAdapterTop,bannerAdapterBottom;
+    private CategoryModuleAdapter categoryModuleAdapter;
 
     private List<ForumListBean> mDatas = new ArrayList<ForumListBean>();
 
@@ -63,22 +68,39 @@ public class HomeGoodsListFragment extends BaseFragment implements ForumListCont
 
         page = 1;
 
-
         ptrview.setEnableNestedScroll(true);
+
         VirtualLayoutManager vlayout = new VirtualLayoutManager(getContext());
         rv_view.setLayoutManager(vlayout);
 
-        LinearLayoutHelper bannerStudentMeans = new LinearLayoutHelper();
-        bannerAdapter = new BannerAdapter(getContext(), bannerStudentMeans, this, 1);
+
+        LinearLayoutHelper layoutHelperAd = new LinearLayoutHelper();
+        bannerAdapterTop = new BannerAdapter(getContext(), layoutHelperAd, this, 1);
+
+
+        List<TestBean1>  categoryModuleList = new ArrayList<>();
+        for (int i = 0; i <4 ; i++) {
+
+            TestBean1 testBean1 = new TestBean1("鞋子","潮流品牌",R.mipmap.test2);
+            categoryModuleList.add(testBean1);
+        }
+
+        GridLayoutHelper gridLayoutHelper = new GridLayoutHelper(2);
+        categoryModuleAdapter = new CategoryModuleAdapter(getContext(), gridLayoutHelper, this);
+        categoryModuleAdapter.setData(categoryModuleList);
+
+        LinearLayoutHelper layoutHelperAd2 = new LinearLayoutHelper();
+        layoutHelperAd2.setMargin(0, DensityUtil.dip2px(10),0, 0);
+        bannerAdapterBottom = new BannerAdapter(getContext(), layoutHelperAd2, this, 2);
 
         List<DelegateAdapter.Adapter> adapters = new ArrayList<>();
-        adapters.add(bannerAdapter);
+        adapters.add(bannerAdapterTop);
+        adapters.add(categoryModuleAdapter);
+        adapters.add(bannerAdapterBottom);
 
         DelegateAdapter delegateAdapter = new DelegateAdapter(vlayout);
         delegateAdapter.setAdapters(adapters);
         rv_view.setAdapter(delegateAdapter);
-
-
 
     }
 
@@ -93,12 +115,13 @@ public class HomeGoodsListFragment extends BaseFragment implements ForumListCont
         List<ShareBannerBean> list =new ArrayList();
         list.add(aa);
         list.add(aa);
-        bannerAdapter.setBannerData(list);
+        bannerAdapterTop.setBannerData(list);
+        bannerAdapterBottom.setBannerData(list);
     }
 
     @Override
     protected void setListener() {
-        ptrview.setOnPtrListener(GeneralPtrView.PTRTYPE.BOTH, new GeneralPtrView.OnPtrListener() {
+        ptrview.setOnPtrListener(GeneralPtrView.PTRTYPE.LOADMORE_ONEY, new GeneralPtrView.OnPtrListener() {
             @Override
             public void onPtrRefresh() {
                 page = 1;
