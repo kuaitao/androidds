@@ -1,5 +1,7 @@
 package com.bashapplication.mine;
 
+import android.view.View;
+
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -7,6 +9,8 @@ import com.bashapplication.R;
 import com.bashapplication.bash.BaseActivity;
 import com.bashapplication.mine.adapter.AddressListAdapter;
 import com.bashapplication.mine.bean.AddressBean;
+import com.bashapplication.utils.JumperUtils;
+import com.chad.library.adapter.base.BaseQuickAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,6 +48,18 @@ public class AddressListActivity extends BaseActivity {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(activity);
         recyclerview.setLayoutManager(linearLayoutManager);
         addressListAdapter = new AddressListAdapter(activity, addressBeanList);
+        addressListAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
+            @Override
+            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+
+                switch (view.getId()){
+                    case R.id.rly_root:
+
+                        JumperUtils.JumpTo(activity,AddAddressActivity.class);
+                    break;
+                }
+            }
+        });
         recyclerview.setAdapter(addressListAdapter);
     }
 

@@ -113,7 +113,7 @@ public class MineFragment extends BaseFragment {
                 JumperUtils.JumpTo(activity, PersonalInfoActivity.class);
                 break;
             case R.id.lly_address:
-                JumperUtils.JumpTo(activity,  AddressMapActivity.class);
+                JumperUtils.JumpTo(activity,  AddressListActivity.class);
                 break;
             case R.id.lly_browse_recode:
                 JumperUtils.JumpTo(activity, UploadNeedsActivity.class);
